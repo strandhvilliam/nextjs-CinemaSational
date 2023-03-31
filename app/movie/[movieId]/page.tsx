@@ -17,8 +17,8 @@ const MoviePage = async ({params}: any) => {
             <div className={styles.container}>
                 <MovieView movie={movie}/>
                 <DownButton className={styles['down-button']}/>
+                <div className={styles.transition}></div>
             </div>
-            <div className={styles.transition}></div>
             <div className={styles['post-feed-container']}>
                 <PostFeed/>
             </div>

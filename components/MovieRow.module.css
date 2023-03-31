@@ -1,0 +1,13 @@
+.row {
+    display: flex;
+    max-width: 52rem;
+    gap: 2rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.row::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
