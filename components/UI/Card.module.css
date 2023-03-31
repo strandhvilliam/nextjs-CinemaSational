@@ -1,0 +1,23 @@
+.card {
+    background: var(--tile-start-gradient);
+    /*background: linear-gradient(
+        to bottom right,
+        var(--tile-start-gradient),
+        var(--tile-end-gradient)
+    );*/
+    color: #fff;
+    /*background: linear-gradient(*/
+    /*    to bottom right,*/
+    /*    rgb(var(--tile-start-rgb)),*/
+    /*    rgb(var(--tile-end-rgb))*/
+    /*);*/
+    border: 1px solid var(--tile-border-color);
+    border-radius: 0.5rem;
+    padding: 1.6rem;
+    /*margin: 1rem;*/
+    width: 100%;
+    /*height: 8rem;*/
+    display: flex;
+    align-items: center;
+    /*box-shadow: var(--primary-glow);*/
+}

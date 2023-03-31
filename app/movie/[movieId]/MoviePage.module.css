@@ -1,0 +1,147 @@
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, var(--background-start-gradient), var(--background-end-gradient)) no-repeat;
+    z-index: -1;
+    backdrop-filter: brightness(0.6) ;
+    overflow: auto;
+}
+
+
+.movie-container {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    margin-top: 10%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.post-feed-container {
+    position: relative;
+    z-index: 1;
+    /*transform: translateY(-40%);*/
+    background: var(--background-start-gradient);
+    /*border: 1px solid red;*/
+}
+
+.transition {
+    transform: translateY(-30%);
+    /*background: linear-gradient(to bottom transparent, var(--background-start-gradient));*/
+    width: 100%;
+    /*border: 1px solid red;*/
+    height: 20rem;
+    z-index: 1;
+}
+
+
+
+.main {
+    padding-left: 10%;
+}
+
+
+
+
+
+.title {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--light-white-color);
+    text-transform: uppercase;
+    max-width: 90rem;
+    /*text-shadow: 0 0 2rem #000000;*/
+}
+
+.movie-info {
+    color: var(--light-white-color);
+    display: flex;
+    gap: 4.5rem;
+    font-size: 1.4rem;
+    margin-top: 0.6rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.overview-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 4rem;
+    color: var(--light-white-color);
+}
+
+.overview {
+    margin-top: 0.4rem;
+    color: var(--light-white-color);
+    font-size: 1.4rem;
+    max-width: 72rem;
+}
+
+
+.credits {
+    margin-right: 10%;
+    color: var(--light-white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+    gap: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.credits h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.director {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.cast {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.down-button {
+    position: absolute;
+    margin: 2rem;
+    font-size: 2rem;
+    color: var(--light-white-color);
+    cursor: pointer;
+    bottom: 1rem;
+    right: 0;
+    left: 0;
+}
+

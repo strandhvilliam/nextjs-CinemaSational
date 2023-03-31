@@ -1,0 +1,22 @@
+.login-box {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.logo {
+    object-fit: scale-down;
+    width: 22rem;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    margin-top: 4rem;
+    gap: 2rem;
+}

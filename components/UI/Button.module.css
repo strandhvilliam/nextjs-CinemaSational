@@ -1,0 +1,92 @@
+.btn {
+    background-color: var(--input-primary-background);
+    border: 1px solid var(--tile-border-color);
+    border-radius: 0.25rem;
+    padding: 1rem 1.2rem;
+    color: var(--light-white-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: "Raleway", sans-serif;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+.close-btn img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    z-index: 5;
+}
+
+.menu-btn img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+.secondary-btn {
+    box-shadow: none;
+    border: 1px solid var(--tile-border-color);
+    background-color: transparent;
+}
+
+
+.options {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.options:hover {
+    background: var(--input-primary-background);
+}
+
+.down-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.down-button:hover {
+    transform: translateY(-0.2rem);
+}
