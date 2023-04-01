@@ -5,7 +5,7 @@ import styles from '../../error.module.css'
 import Link from "next/link";
 import Card from "@/components/UI/Card";
 
-export default function Error() {
+export default function MovieError() {
     return (
         <Card className={styles.container}>
                 <h1 className={styles.error}>404</h1>

@@ -19,6 +19,7 @@ import toast from "react-hot-toast";
 const Navigation = () => {
     const auth = useAuth();
     const path = usePathname();
+    const router = useRouter();
 
     const [open, setOpen] = useState(false);
     const [mount, setMount] = useState(false);
@@ -37,8 +38,9 @@ const Navigation = () => {
 
     const openMenu = () => {
         setOpen(true);
-
     }
+
+
 
     const closeMenu = () => {
         containerRef.current?.classList.add(styles['close-animation']);
@@ -48,8 +50,11 @@ const Navigation = () => {
         }, 500);
     }
 
-    const submitHandler = (value: string) => {
-        // TODO: Implement search
+    const searchHandler = (value: string) => {
+
+        const query = encodeURIComponent(value.trim());
+
+        router.push(`/search/${value}`);
     }
 
     const logoutHandler = async () => {
@@ -63,7 +68,7 @@ const Navigation = () => {
                                         className={styles.backdrop}></div>, bodyRef.current)}
             <Link onClick={closeMenu} href={"/"}><Logo size={"1"} style={styles.logo}/></Link>
             <CloseButton onClick={closeMenu}/>
-            <NavList onSubmit={submitHandler} path={path}/>
+            <NavList onSubmit={searchHandler} path={path}/>
             <NavProfile user={auth.user} onLogout={logoutHandler} onNavigate={closeMenu}/>
         </div>) : <MenuButton onClick={openMenu}/>
 
@@ -71,6 +76,7 @@ const Navigation = () => {
     return (
         <>
             {nav}
+            <Searchbar className={styles['main-search']} onSubmit={searchHandler}/>
             <Link className={styles['logo-link']} href={"/"}>
                 <Logo size={"1"} style={styles['main-logo']}/>
             </Link>

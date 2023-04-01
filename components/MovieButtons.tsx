@@ -8,6 +8,7 @@ const MovieButtons = () => {
         <div className={styles.container}>
             <OutlineButton>Watch</OutlineButton>
             <OutlineButton>Add to favorites</OutlineButton>
+            <OutlineButton>Website</OutlineButton>
         </div>
     );
 };

@@ -3,9 +3,10 @@ import styles from './Searchbar.module.css'
 import { ChangeEvent, FormEvent, useState } from "react";
 interface Props {
     onSubmit: (value: string) => void
+    className?: string
 }
 
-const Searchbar = ( {onSubmit: submitHandler}: Props) => {
+const Searchbar = ( {onSubmit: submitHandler, className}: Props) => {
     const [search, setSearch] = useState('');
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +20,7 @@ const Searchbar = ( {onSubmit: submitHandler}: Props) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className={`${className ? className : ''}`} onSubmit={onSubmit}>
             <input className={styles.input} onChange={onChange} value={search} type="text" placeholder="Search"/>
         </form>
     );

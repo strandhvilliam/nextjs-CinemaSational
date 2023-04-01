@@ -1,21 +1,36 @@
 import styles from "./MoviePage.module.css";
 import { Movie } from "@/lib/interfaces/movie";
 import Image from "next/image";
-import { getMovieById } from "@/lib/tmdb/tmdb";
+import { getMovieById, getMovieCredits, getMovieVideos } from "@/lib/tmdb/tmdb";
 import MovieButtons from "@/components/MovieButtons";
 import DownButton from "@/components/UI/DownButton";
 import PostFeed from "@/components/PostFeed";
+import VideoScroller from "@/components/VideoScroller";
+import { Video } from "@/lib/interfaces/video";
+import { Cast } from "@/lib/interfaces/cast";
+import MovieCast from "@/components/MovieCast";
 
-const IMG_URL = "https://image.tmdb.org/t/p/original";
+const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 
 const MoviePage = async ({params}: any) => {
 
     const movie: Movie = await getMovieById(params.movieId);
+    const videos: Video[] = await getMovieVideos(params.movieId);
+    const videoURLs: string[] = videos
+        .filter((video: Video) => video.site === "YouTube")
+        .filter((video: Video) => video.type === "Trailer" || video.type === "Teaser")
+        .map((video: Video) => video.key);
+    const credits: Cast[] = await getMovieCredits(params.movieId);
+
+    const directors: Cast[] = credits.filter((credit: Cast) => credit.role === "Director").slice(0, 3);
+    console.log(credits.filter((credit: Cast) => credit.role === "Director")[0])
+
+    const actors: Cast[] = credits.slice(0, 5);
 
     return (
         <>
             <div className={styles.container}>
-                <MovieView movie={movie}/>
+                <MovieView movie={movie} videoURLs={videoURLs} directors={directors} actors={actors}/>
                 <DownButton className={styles['down-button']}/>
                 <div className={styles.transition}></div>
             </div>
@@ -30,7 +45,15 @@ const MoviePage = async ({params}: any) => {
 export default MoviePage;
 
 
-const MovieView = ({movie}: any) => {
+interface ViewProps {
+    movie: Movie,
+    videoURLs: string[],
+    directors: Cast[],
+    actors: Cast[]
+}
+
+
+const MovieView = ({movie, videoURLs, directors, actors }: ViewProps) => {
     const background = `url(${(IMG_URL.concat(movie.backdropPath))})`
 
     const optimizeTitle = (title: string) => {
@@ -39,8 +62,6 @@ const MovieView = ({movie}: any) => {
         }
         return <h1 className={styles.title}>{title}</h1>
     }
-
-    console.log(movie)
 
     return (
         <>
@@ -62,20 +83,8 @@ const MovieView = ({movie}: any) => {
                     <p className={styles.overview}>{movie.overview}</p>
                     <MovieButtons/>
                 </div>
-                <div className={styles.credits}>
-                    <h3>Director</h3>
-                    <ul className={styles.director}>
-                        <li>Director 1</li>
-                        <li>Director 2</li>
-                    </ul>
-                    <h3>Cast</h3>
-                    <ul className={styles.cast}>
-                        <li>Actor 1</li>
-                        <li>Actor 2</li>
-                        <li>Actor 3</li>
-                        <li>Actor 4</li>
-                    </ul>
-                </div>
+                <MovieCast directors={directors} actors={actors}/>
+                <VideoScroller videosURL={videoURLs}/>
             </div>
         </>
     );

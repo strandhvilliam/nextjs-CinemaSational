@@ -1,21 +1,22 @@
-import styles from './MovieRow.module.css'
+import styles from './MovieGrid.module.css'
 import { Movie } from "@/lib/interfaces/movie";
 import MoviePoster from "@/components/MoviePoster";
-
+import { getPopularMovies } from "@/lib/tmdb/tmdb";
 
 interface Props {
     content: Movie[]
 }
 
-const MovieRow = ({ content }: Props) => {
+const MovieGrid = ({content}: Props) => {
+
 
     return (
-        <ul className={styles.row}>
+        <ul className={styles.grid}>
             {content.map((movie: Movie) => (
                 <MoviePoster key={movie.id} movie={movie}/>
             ))}
         </ul>
-    )
-}
+    );
+};
 
-export default MovieRow;
+export default MovieGrid;

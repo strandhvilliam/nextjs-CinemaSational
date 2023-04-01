@@ -80,12 +80,22 @@
 
 .main-logo {
     position: absolute;
-    top: 2rem;
+    top: 1.4rem;
     right: 2rem;
     align-self: center;
     max-width: 16rem;
     cursor: pointer;
     z-index: 5;
+}
+
+.main-search {
+    position: absolute;
+    top: 2rem;
+    left: 25%;
+    max-width: 35%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 2;
 }
 
 

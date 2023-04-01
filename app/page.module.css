@@ -1,3 +1,13 @@
 .container {
   margin-top: 12rem;
+
+}
+
+.group {
+
+}
+
+.group h2 {
+  padding-left: 1.4rem;
+  color: var(--light-white-color);
 }
