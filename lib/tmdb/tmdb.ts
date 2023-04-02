@@ -1,7 +1,8 @@
 import { Movie } from "@/lib/interfaces/movie";
 import { notFound } from "next/navigation";
 import { Video } from "@/lib/interfaces/video";
-import { Cast } from "@/lib/interfaces/cast";
+import { Credit } from "@/lib/interfaces/credit";
+import { Category } from "@/lib/interfaces/category";
 
 export const getMovieById = async (id: string) => {
     const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API_KEY}&language=en-US`,
@@ -30,10 +31,6 @@ export const getMovieById = async (id: string) => {
     }
 
     return movie;
-}
-
-export const getMoviesByGenre = async (genreId: string) => {
-
 }
 
 export const getPopularMovies = async () => {
@@ -235,14 +232,68 @@ export const getMovieCredits = async (movieId: string) => {
     }
 
 
-    const cast: Cast[] = data.cast.map((castData: any) => {
+    const cast: Credit[] = data.cast.map((castData: any) => {
         return {
-            id: castData.id,
+            id: +castData.id,
             name: castData.name,
-            role: castData.character ? castData.character : castData.job ? castData.job : null,
+            role: castData.job,
             profilePath: castData.profile_path,
         }
     });
 
-    return cast;
+    const crew: Credit[] = data.crew.map((crewData: any) => {
+        return {
+            id: +crewData.id,
+            name: crewData.name,
+            role: crewData.job,
+            profilePath: crewData.profile_path,
+        }
+    });
+
+    return {cast, crew};
+}
+
+
+export const getMovieGenres = async () => {
+    const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en-US`);
+
+    const data = await res.json();
+
+    const categories: Category[] = data.genres.map((categoryData: any) => {
+        return {
+            id: categoryData.id,
+            name: categoryData.name,
+        }
+    });
+
+    console.log(categories)
+
+    return categories;
+}
+
+export const getMoviesByGenre = async (genreId: string) => {
+    const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&with_genres=${genreId}&include_adult=fals&page=1` )
+
+    const data = await res.json();
+
+    if (data.success === false) {
+        notFound();
+    }
+
+    const movies: Movie[] = data.results.map((movieData: any) => {
+        return {
+            id: movieData.id,
+            title: movieData.title,
+            releaseDate: movieData.release_date,
+            posterPath: movieData.poster_path,
+            overview: movieData.overview,
+            voteAverage: movieData.vote_average.toFixed(1),
+            genres: movieData.genre_ids.map((genre: { name: string; }) => genre.name),
+            runtime: movieData.runtime,
+            backdropPath: movieData.backdrop_path,
+            status: movieData.status
+        }
+    });
+
+    return movies;
 }

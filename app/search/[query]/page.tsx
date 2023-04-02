@@ -20,3 +20,5 @@ const SearchPage = async ( { params }: any) => {
 };
 
 export default SearchPage;
+
+

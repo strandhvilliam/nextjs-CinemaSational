@@ -7,8 +7,9 @@ import DownButton from "@/components/UI/DownButton";
 import PostFeed from "@/components/PostFeed";
 import VideoScroller from "@/components/VideoScroller";
 import { Video } from "@/lib/interfaces/video";
-import { Cast } from "@/lib/interfaces/cast";
+import { Credit } from "@/lib/interfaces/credit";
 import MovieCast from "@/components/MovieCast";
+import ViewPost from "@/components/ViewPost";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 
@@ -20,22 +21,31 @@ const MoviePage = async ({params}: any) => {
         .filter((video: Video) => video.site === "YouTube")
         .filter((video: Video) => video.type === "Trailer" || video.type === "Teaser")
         .map((video: Video) => video.key);
-    const credits: Cast[] = await getMovieCredits(params.movieId);
 
-    const directors: Cast[] = credits.filter((credit: Cast) => credit.role === "Director").slice(0, 3);
-    console.log(credits.filter((credit: Cast) => credit.role === "Director")[0])
-
-    const actors: Cast[] = credits.slice(0, 5);
+    const {cast, crew} = await getMovieCredits(params.movieId);
+    const directors: Credit[] = crew.filter((credit: Credit) => credit.role === "Director").slice(0, 3);
+    const actors: Credit[] = cast.slice(0, 6);
+    const finalCast = directors.concat(actors);
 
     return (
         <>
             <div className={styles.container}>
-                <MovieView movie={movie} videoURLs={videoURLs} directors={directors} actors={actors}/>
+                <MovieView movie={movie} videoURLs={videoURLs} cast={finalCast}/>
                 <DownButton className={styles['down-button']}/>
                 <div className={styles.transition}></div>
             </div>
             <div className={styles['post-feed-container']}>
-                <PostFeed/>
+                <ul className={styles.posts}>
+                    <ViewPost/>
+                    <ViewPost/>
+                    <ViewPost/>
+                    <ViewPost/>
+                    <ViewPost/>
+                    <ViewPost/>
+                    <ViewPost/>
+                    <ViewPost/>
+                </ul>
+
             </div>
         </>
     );
@@ -48,12 +58,11 @@ export default MoviePage;
 interface ViewProps {
     movie: Movie,
     videoURLs: string[],
-    directors: Cast[],
-    actors: Cast[]
+    cast: Credit[],
 }
 
 
-const MovieView = ({movie, videoURLs, directors, actors }: ViewProps) => {
+const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
     const background = `url(${(IMG_URL.concat(movie.backdropPath))})`
 
     const optimizeTitle = (title: string) => {
@@ -83,9 +92,14 @@ const MovieView = ({movie, videoURLs, directors, actors }: ViewProps) => {
                     <p className={styles.overview}>{movie.overview}</p>
                     <MovieButtons/>
                 </div>
-                <MovieCast directors={directors} actors={actors}/>
                 <VideoScroller videosURL={videoURLs}/>
             </div>
+            <h3 className={styles['cast-title']}>Cast & Crew</h3>
+            <MovieCast className={styles.cast} cast={cast}/>
         </>
     );
 }
+
+
+
+

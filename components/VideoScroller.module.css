@@ -2,11 +2,11 @@
 
 .scroll-container {
     position: absolute;
-    right: 4rem;
+    right: 10%;
     top: 2rem;
     width: 360px;
     height: 100%;
-    max-height: 32rem;
+    max-height: 52rem;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -23,4 +23,17 @@
     display: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+
+.container-overlay {
+    position: absolute;
+    right: 10%;
+    top: 2rem;
+    width: 360px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 80%, var(--background-end-gradient)) no-repeat;
+    border-radius: 0.5rem;
+    z-index: 10;
+    pointer-events: none;
 }

@@ -7,18 +7,10 @@ C
 :
 
 .env.local,1/f/1fa30fea3e9ae270a3c38a6113a3689d8987d108
-F
-app/api/hello/route.ts,6/5/65cd700c96c8dac5e76474ca44be579d41676131
 @
 public/close.svg,6/d/6d2a4c897f9c805660d29d1da99a76ce7949d59e
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 D
 app/error.module.css,0/5/05c560a43b361d5e60e3fcb0f1ef922637a9104d
->
-app/layout.tsx,e/e/ee80c90a95b380fdaa8bc6ba2190fbb3fdc30bb0
 ?
 app/loading.tsx,6/9/69c0ab637b92d9f081a7292223625dc93b7d8e57
 F
@@ -35,8 +27,6 @@ R
 "components/UI/Searchbar.module.css,3/d/3ddcf42c902d93473f6d8ecac083fa36ba3ad853
 Q
 !components/UI/SecondaryButton.tsx,f/7/f73b18b6cc1794bdae0fc8b3d75e38ab85a02988
-F
-components/UI/Card.tsx,8/4/84e43ba9f7c64ef33e1b12dabfd83c6741da1832
 E
 components/Popups.tsx,b/7/b7c739331848fd0b53ed7a6d19bc9448b0f9f294
 @
@@ -47,12 +37,8 @@ B
 public/options.svg,2/4/244df0d9ef2dfc876c97bef2951eacf8be02bdd5
 O
 components/UI/OptionsButton.tsx,0/d/0d41b865f473b18691069e83122b6c72aebc6508
-L
-components/UI/DownButton.tsx,4/c/4cbaa7f6cbb0def597d8f1ee971aff7544e56dc8
 N
 components/PostItem.module.css,f/3/f38cf549bd0eed49579008b8d53e543359da8e72
-O
-components/UI/Button.module.css,7/e/7ed49226158cc1a4d25872599483f86787adc169
 E
 .vscode/settings.json,8/9/89aa447020cdcb580cea0495694d46a55941edbe
 J
@@ -99,5 +85,3 @@ G
 components/PostItem.tsx,6/8/683e058bc7c284ac8c8d57d131bb4181dc77f6fb
 G
 components/PostFeed.tsx,d/8/d8a14fcccd94044a7ce01c0c1f55a014dce7e262
-N
-components/PostFeed.module.css,7/3/73c4f9bdc158c9d3ee59c2c849dc1ca94a2cd772

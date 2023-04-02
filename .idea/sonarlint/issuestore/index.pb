@@ -7,20 +7,12 @@ C
 :
 
 .env.local,1/f/1fa30fea3e9ae270a3c38a6113a3689d8987d108
-F
-app/api/hello/route.ts,6/5/65cd700c96c8dac5e76474ca44be579d41676131
-A
-package-lock.json,f/a/fa288d1472d29beccb489a676f68739ad365fc47
-<
-package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 D
 app/error.module.css,0/5/05c560a43b361d5e60e3fcb0f1ef922637a9104d
 R
 "components/UI/Searchbar.module.css,3/d/3ddcf42c902d93473f6d8ecac083fa36ba3ad853
 N
 components/PostItem.module.css,f/3/f38cf549bd0eed49579008b8d53e543359da8e72
-O
-components/UI/Button.module.css,7/e/7ed49226158cc1a4d25872599483f86787adc169
 E
 .vscode/settings.json,8/9/89aa447020cdcb580cea0495694d46a55941edbe
 X
@@ -41,24 +33,18 @@ G
 lib/serviceAccount.json,2/d/2dca812c08b5ce91bae5203fff0077b60ba5a8bd
 H
 components/UI/Button.tsx,3/1/31127c7c30a3312eddecddbf255cd7ed879b95c3
-F
-components/UI/Card.tsx,8/4/84e43ba9f7c64ef33e1b12dabfd83c6741da1832
 @
 public/close.svg,6/d/6d2a4c897f9c805660d29d1da99a76ce7949d59e
 M
 components/UI/CloseButton.tsx,d/0/d09e9b673b7d1a4fb46e1d8eb94d949526826190
 ?
 public/down.svg,5/5/55ea1a520355d40eb6124e40dfbc2fa430725c22
-L
-components/UI/DownButton.tsx,4/c/4cbaa7f6cbb0def597d8f1ee971aff7544e56dc8
 O
 lib/firebase/firebase-client.ts,a/c/ac289d33c4f58f8f36d9c9af9123308019a3355a
 O
 lib/firebase/firebase-server.ts,6/6/66aedb3dce48d4f39f94a63b38dd798cc43087cf
 @
 public/heart.svg,4/6/46a451b2960fcaaac1989e635d54b97591f102e1
->
-app/layout.tsx,e/e/ee80c90a95b380fdaa8bc6ba2190fbb3fdc30bb0
 ?
 app/loading.tsx,6/9/69c0ab637b92d9f081a7292223625dc93b7d8e57
 F
@@ -97,7 +83,5 @@ A
 app/AuthCheck.tsx,c/3/c3dc5657ba848baaca1dae1e7a14533cd85d0638
 G
 components/PostFeed.tsx,d/8/d8a14fcccd94044a7ce01c0c1f55a014dce7e262
-N
-components/PostFeed.module.css,7/3/73c4f9bdc158c9d3ee59c2c849dc1ca94a2cd772
 G
 components/PostItem.tsx,6/8/683e058bc7c284ac8c8d57d131bb4181dc77f6fb

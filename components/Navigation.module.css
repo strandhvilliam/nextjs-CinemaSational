@@ -8,6 +8,7 @@
     padding: 2rem;
     z-index: 3;
     animation: slideIn 0.5s forwards;
+    top: 0;
     left: -24rem;
 
 }
@@ -154,3 +155,15 @@
     z-index: 10;
 }
 
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+.dropdown li {
+    font-size: 1.2rem;
+
+}

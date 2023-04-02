@@ -1,5 +1,5 @@
 
-export interface Cast {
+export interface Credit {
     id: number;
     name: string;
     role: string;

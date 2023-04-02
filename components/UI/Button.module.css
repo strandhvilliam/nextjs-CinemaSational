@@ -85,6 +85,7 @@
     border: none;
     padding: 0.5rem;
     cursor: pointer;
+    z-index: 3;
 }
 
 .down-button:hover {

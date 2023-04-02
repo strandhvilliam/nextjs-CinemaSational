@@ -15,8 +15,13 @@ import { useAuth } from "@/app/AuthProvider";
 import firebase from "firebase/compat/app";
 import { User } from "@firebase/auth";
 import toast from "react-hot-toast";
+import { Category } from "@/lib/interfaces/category";
 
-const Navigation = () => {
+interface Props {
+    categories: Category[]
+}
+
+const Navigation = ( { categories }: Props) => {
     const auth = useAuth();
     const path = usePathname();
     const router = useRouter();
@@ -39,6 +44,7 @@ const Navigation = () => {
     const openMenu = () => {
         setOpen(true);
     }
+
 
 
 
@@ -68,7 +74,7 @@ const Navigation = () => {
                                         className={styles.backdrop}></div>, bodyRef.current)}
             <Link onClick={closeMenu} href={"/"}><Logo size={"1"} style={styles.logo}/></Link>
             <CloseButton onClick={closeMenu}/>
-            <NavList onSubmit={searchHandler} path={path}/>
+            <NavList onSubmit={searchHandler} path={path} categories={categories}/>
             <NavProfile user={auth.user} onLogout={logoutHandler} onNavigate={closeMenu}/>
         </div>) : <MenuButton onClick={openMenu}/>
 
@@ -89,9 +95,17 @@ export default Navigation;
 interface ListProps {
     onSubmit: (value: string) => void
     path: string
+    categories: Category[]
 }
 
-const NavList = ({onSubmit, path}: ListProps) => {
+const NavList = ({onSubmit, path, categories }: ListProps) => {
+    const [categoriesVisible, setCategoriesVisible] = useState(false);
+    const router = useRouter();
+
+    const openDropdown = () => {
+        setCategoriesVisible(true);
+    }
+
     return (
         <ul className={styles.nav}>
             <li className={`${styles['nav-item']}`}><Searchbar onSubmit={onSubmit}/></li>
@@ -99,7 +113,13 @@ const NavList = ({onSubmit, path}: ListProps) => {
                 <Link href={"/"}>Home</Link>
             </li>
             <li className={`${styles['nav-item']} ${path === '/categories' ? styles.active : ''}`}>
-                <Link href={"/login"}>Categories</Link>
+                <a style={{cursor: 'pointer'}} onClick={openDropdown}>Categories</a>
+                {categoriesVisible && <ul className={styles['dropdown']}>
+                    {categories.map(category => (
+                        <li key={category.id}>
+                            <Link href={`/category/${category.id}`}>{category.name}</Link>
+                        </li>))}
+                </ul>}
             </li>
             <li className={`${styles['nav-item']} ${path === '/discussion' ? styles.active : ''}`}>
                 <Link href={"/discussion"}>Discussion</Link>
