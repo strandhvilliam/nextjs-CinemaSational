@@ -2,12 +2,12 @@ import styles from "./MoviePage.module.css";
 import { Movie } from "@/lib/interfaces/movie";
 import Image from "next/image";
 import { getMovieById, getMovieCredits, getMovieVideos } from "@/lib/tmdb/tmdb";
-import MovieButtons from "@/components/MovieButtons";
+import MovieButtons from "@/app/movie/[movieId]/MovieButtons";
 import DownButton from "@/components/UI/DownButton";
-import VideoScroller from "@/components/VideoScroller";
+import VideoScroller from "@/app/movie/[movieId]/VideoScroller";
 import { Video } from "@/lib/interfaces/video";
 import { Credit } from "@/lib/interfaces/credit";
-import MovieCast from "@/components/MovieCast";
+import MovieCast from "@/app/movie/[movieId]/MovieCast";
 import ViewPost from "@/components/ViewPost";
 import MoviePoster from "@/components/MoviePoster";
 import Link from "next/link";
@@ -96,8 +96,10 @@ const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
                 </div>
                 <VideoScroller videosURL={videoURLs}/>
             </div>
-            <h3 className={styles['cast-title']}>Cast & Crew</h3>
-            <MovieCast className={styles.cast} cast={cast}/>
+            <div className={styles.cast}>
+                <h3>Cast & Crew</h3>
+                <MovieCast cast={cast}/>
+            </div>
         </>
     );
 }

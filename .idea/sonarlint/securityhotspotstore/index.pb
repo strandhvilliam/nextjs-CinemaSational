@@ -19,8 +19,6 @@ R
 "components/UI/Searchbar.module.css,3/d/3ddcf42c902d93473f6d8ecac083fa36ba3ad853
 Q
 !components/UI/SecondaryButton.tsx,f/7/f73b18b6cc1794bdae0fc8b3d75e38ab85a02988
-E
-components/Popups.tsx,b/7/b7c739331848fd0b53ed7a6d19bc9448b0f9f294
 @
 public/heart.svg,4/6/46a451b2960fcaaac1989e635d54b97591f102e1
 B
@@ -45,8 +43,6 @@ B
 public/down.svg,5/5/55ea1a520355d40eb6124e40dfbc2fa430725c22
 T
 $app/discussion/Discussion.module.css,e/b/ebc9dd53d0a5f48f42ac6d1473b50e709005e803
-R
-"components/MovieButtons.module.css,c/e/ce73967d2624b2aab42838ff9df8ece2e0806bd4
 ?
 public/menu.svg,5/c/5cd9fd4b56116160b45640e668dca184aa54b47e
 H
@@ -57,8 +53,6 @@ L
 app/search/[query]/error.tsx,e/d/edffe87a76f5a5d449a76aee4fef5f1fc40d71d7
 G
 lib/interfaces/video.ts,9/5/955a38a5022433aae53153e207b93c6d1dc54665
-K
-components/MovieButtons.tsx,0/9/09d672fb7325f79d22b18e42fc1ed0374e66828a
 M
 app/movie/[movieId]/error.tsx,b/e/bea3809f7944414f928e84b2a3ecddad2e116bdd
 R
@@ -67,16 +61,12 @@ F
 components/UI/Card.tsx,8/4/84e43ba9f7c64ef33e1b12dabfd83c6741da1832
 N
 components/PostFeed.module.css,7/3/73c4f9bdc158c9d3ee59c2c849dc1ca94a2cd772
-G
-components/MovieRow.tsx,6/b/6b95a262390e9c629603f84687e8cefa6fb1053d
 K
 components/YoutubeEmbed.tsx,e/8/e84f3bf94eedc7dcdbd2b44b4491b20b1a09290b
 L
 components/UI/DownButton.tsx,4/c/4cbaa7f6cbb0def597d8f1ee971aff7544e56dc8
 O
 components/UI/Button.module.css,7/e/7ed49226158cc1a4d25872599483f86787adc169
-P
- components/Navigation.module.css,a/d/ad97b091637fe5f45a932825de63b961e59f4c97
 O
 components/MovieCast.module.css,7/6/76e16dbda79d83b113f3b6987fad5caa777b4614
 H
@@ -93,13 +83,7 @@ S
 #components/VideoScroller.module.css,f/3/f3a0ec57b0cb4c35f530453c852e0c096c332324
 ?
 app/globals.css,4/d/4dfa49b1332116153eb16507891285845e9ab86e
-N
-components/MovieRow.module.css,a/3/a3dc7b6911c59647b0fcee697428fc29b31aa1b9
 X
 (app/search/[query]/SearchPage.module.css,3/8/3832c29847a8925a5f9b5b34e25e3e27884fa7cd
-O
-components/MovieGrid.module.css,b/6/b6f412a22350197dad7d847633ed521fa3a343cc
 G
 lib/serviceAccount.json,2/d/2dca812c08b5ce91bae5203fff0077b60ba5a8bd
-O
-lib/firebase/firebase-client.ts,a/c/ac289d33c4f58f8f36d9c9af9123308019a3355a

@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    z-index: 3;
+    z-index: 6;
     animation: slideIn 0.5s forwards;
     top: 0;
     left: -24rem;
@@ -45,7 +45,7 @@
     height: 100%;
     background-color: #000;
     opacity: 0.5;
-    z-index: 2;
+    z-index: 4;
     animation: fadeIn 0.5s forwards;
 }
 
@@ -166,4 +166,17 @@
 .dropdown li {
     font-size: 1.2rem;
 
+}
+
+@media screen and (max-width: 900px) {
+    .main-search {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .main-logo {
+        width: 10rem;
+    }
 }

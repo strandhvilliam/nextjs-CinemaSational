@@ -1,5 +1,5 @@
 import styles from './VideoScroller.module.css'
-import YoutubeEmbed from "@/components/YoutubeEmbed";
+import YoutubeEmbed from "@/app/movie/[movieId]/YoutubeEmbed";
 
 
 interface Props {

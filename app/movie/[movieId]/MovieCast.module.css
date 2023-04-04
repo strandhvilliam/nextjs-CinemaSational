@@ -10,12 +10,14 @@
     color: var(--light-white-color);
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .container h3 {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
+    z-index: 1;
 }
 
 
@@ -26,4 +28,15 @@
     max-width: 4rem;
     object-fit: cover;
     border: 2px solid var(--light-white-color);
+}
+
+@media (max-width: 900px) {
+    .row {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .row::-webkit-scrollbar {
+        display: none;
+    }
 }

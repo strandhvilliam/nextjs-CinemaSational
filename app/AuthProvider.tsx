@@ -3,7 +3,6 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from "react";
 import { auth, firestore, googleAuthProvider } from "@/lib/firebase/firebase-client";
 import { User } from "@firebase/auth";
-import { DocumentData } from "@firebase/firestore";
 
 interface Props {
     children?: ReactNode,
