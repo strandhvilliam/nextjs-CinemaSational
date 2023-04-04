@@ -10,6 +10,11 @@ import { Video } from "@/lib/interfaces/video";
 import { Credit } from "@/lib/interfaces/credit";
 import MovieCast from "@/components/MovieCast";
 import ViewPost from "@/components/ViewPost";
+import MoviePoster from "@/components/MoviePoster";
+import Button from "@/components/UI/Button";
+import Link from "next/link";
+import { db, getPostsByMovieId } from "@/lib/firebase/firebase-server";
+import { useCallback } from "react";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 
@@ -27,6 +32,10 @@ const MoviePage = async ({params}: any) => {
     const actors: Credit[] = cast.slice(0, 6);
     const finalCast = directors.concat(actors);
 
+    const posts: Post[] = await getPostsByMovieId(params.movieId);
+
+    console.log(posts)
+
     return (
         <>
             <div className={styles.container}>
@@ -36,16 +45,12 @@ const MoviePage = async ({params}: any) => {
             </div>
             <div className={styles['post-feed-container']}>
                 <ul className={styles.posts}>
-                    <ViewPost/>
-                    <ViewPost/>
-                    <ViewPost/>
-                    <ViewPost/>
-                    <ViewPost/>
-                    <ViewPost/>
-                    <ViewPost/>
-                    <ViewPost/>
+                    {posts.length === 0 && <h2 className={styles['no-posts']}>No posts yet!</h2>}
+                    {posts.map((post: Post) => (
+                        <ViewPost key={`${post.authorId}/${post.slug}`} post={post}/>
+                    ))}
                 </ul>
-
+                <MovieCta movie={movie} />
             </div>
         </>
     );
@@ -99,6 +104,17 @@ const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
         </>
     );
 }
+
+const MovieCta = ( { movie, className }: { movie: Movie, className?: string} ) => {
+    return (
+        <div className={styles.cta}>
+            <MoviePoster movie={movie}/>
+            <h3>Tell others what you think</h3>
+            <Image className={styles['cta-arrow']} src={'/right-arrow.svg'} alt={'arrow'} width={40} height={40}/>
+            <Link href={`/post/${movie.id}`} className={styles['cta-button']}>Create post</Link>
+        </div>
+    )
+};
 
 
 

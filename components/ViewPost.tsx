@@ -3,32 +3,33 @@ import Card from "@/components/UI/Card";
 import Image from "next/image";
 import Button from "@/components/UI/Button";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
-const ViewPost = () => {
+const ViewPost = ( { post }: {post: Post} ) => {
+
+    const createdAt = new Date(post.createdAt).toISOString().slice(0, 10);
     return (
         <li>
             <Card className={styles.post}>
                 <div className={styles.top}>
-                    <Image className={styles.image} src={'/img.png'} alt={"profile image"} width={60} height={60}/>
+                    <Image className={styles.image} src={`${post.authorPhotoUrl ? post.authorPhotoUrl : '/placeholder-user.png'}`} alt={"profile image"} width={60} height={60}/>
                     <div className={styles.info}>
-                        <span>Leia Organa | 2023-01-1</span>
-                        <span>Star wars: Rise of the Skywalker</span>
+                        <div>
+                            <Link href={`user/${post.authorId}`}><span className={styles.name}>{post.authorName}</span></Link>
+                            <span>{` | ${createdAt}`}</span>
+                        </div>
+
+                        <span>{post.movieTitle}</span>
                     </div>
                 </div>
                 <div className={styles.content}>
-                    <h2>This is a header</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque fuga fugiat ipsa numquam
-                        placeat qui quibusdam repudiandae? Aut harum impedit optio placeat vitae. Accusantium blanditiis cum
-                        cumque doloremque est illo, ipsa ipsum, magni molestiae necessitatibus nemo, nisi placeat quaerat
-                        quidem sit temporibus tenetur voluptatibus! Accusamus ad adipisci aspernatur culpa cum dolorem ea
-                        eligendi id illum iste provident quaerat velit veniam, veritatis vero. Adipisci corporis deserunt
-                        distinctio dolores doloribus ea earum error facere facilis in magni minus nihil, omnis pariatur
-                        praesentium quasi quibusdam reiciendis rem reprehenderit sed sint tenetur totam ullam unde ut
-                        voluptate voluptatibus. Placeat quia tenetur totam ullam.
-                    </p>
+                    <h2>{post.title}</h2>
+                    <ReactMarkdown>
+                        {post.content}
+                    </ReactMarkdown>
                 </div>
                 <div className={styles.bottom}>
-                    <Link className={styles.link} href={'/'}>Read full post</Link>
+                    <Link className={styles.link} href={`post/${post.authorId}/${post.slug}`}>Read full post</Link>
                 </div>
             </Card>
         </li>

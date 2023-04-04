@@ -19,6 +19,7 @@ export default async function RootLayout({
 }) {
     const categories: Category[] = await getMovieGenres();
 
+
     return (
         <AuthProvider>
             <html lang="en">

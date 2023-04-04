@@ -1,7 +1,6 @@
 import styles from './Discussion.module.css'
 import PostItem from "@/components/PostItem";
 import { db } from "@/lib/firebase/firebase-server";
-import AuthCheck from "@/app/AuthCheck";
 import Logo from "@/components/UI/Logo";
 
 const DiscussionPage = async () => {
@@ -11,7 +10,7 @@ const DiscussionPage = async () => {
     const posts: Post[] = (await query.get()).docs.map((doc) => {
             const data = doc.data()
             return {
-                id: doc.id,
+                slug: data.slug,
                 title: data.title,
                 content: data.content,
                 published: data.published,
@@ -28,7 +27,7 @@ const DiscussionPage = async () => {
     )
 
     const content = posts.map((post: Post) => (
-        <PostItem key={post.id} post={post}/>))
+        <PostItem key={post.slug} post={post}/>))
 
 
     return (

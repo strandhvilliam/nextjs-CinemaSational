@@ -1,6 +1,5 @@
 'use client';
 import Image from "next/image";
-import AuthCheck from "@/app/AuthCheck";
 
 interface Props {
     size: string,

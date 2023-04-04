@@ -1,7 +1,7 @@
 import styles from './PostFeed.module.css'
 import PostItem from "@/components/PostItem";
 
-const MOCK_POSTS: Post[] = [
+/*const MOCK_POSTS: Post[] = [
     {
         id: '1234124qawfawf',
         title: 'Testing title 11212r12f121f12f12f1 2jklhnkajhiouethakejthalektjha',
@@ -58,14 +58,14 @@ const MOCK_POSTS: Post[] = [
         movieId: '1234124qawfawf',
         movieTitle: 'The Matrix',
     }
-]
+]*/
 
 const PostFeed = () => {
     return (
         <div className={styles.feed}>
-            {MOCK_POSTS.map((post) => (
+            {/*{MOCK_POSTS.map((post) => (
                 <PostItem post={post} key={post.id} />
-            ))}
+            ))}*/}
         </div>
     );
 };
