@@ -4,17 +4,14 @@ import Image from "next/image";
 import { getMovieById, getMovieCredits, getMovieVideos } from "@/lib/tmdb/tmdb";
 import MovieButtons from "@/components/MovieButtons";
 import DownButton from "@/components/UI/DownButton";
-import PostFeed from "@/components/PostFeed";
 import VideoScroller from "@/components/VideoScroller";
 import { Video } from "@/lib/interfaces/video";
 import { Credit } from "@/lib/interfaces/credit";
 import MovieCast from "@/components/MovieCast";
 import ViewPost from "@/components/ViewPost";
 import MoviePoster from "@/components/MoviePoster";
-import Button from "@/components/UI/Button";
 import Link from "next/link";
 import { db, getPostsByMovieId } from "@/lib/firebase/firebase-server";
-import { useCallback } from "react";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 

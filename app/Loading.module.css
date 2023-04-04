@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-white-color);
+}

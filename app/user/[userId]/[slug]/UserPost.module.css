@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    padding: 2rem;
+    width: 100%;
+    gap: 1rem;
+    background: #d2d2d2;
+    max-height: 72rem;
+    border-radius: 0.5rem;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.main::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.main::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0.5rem;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0.5rem;
+}
+
+
+.main h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.main h1::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #000;
+    margin-top: 1rem;
+}
+
+.side {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    gap: 1rem;
+    padding:  2rem 1rem;
+    background: var(--tile-start-gradient);
+    border-radius: 0.5rem;
+    border: 1px solid var(--tile-border-color);
+    color: var(--light-white-color);
+    max-height: 72rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.user-image {
+    border-radius: 50%;
+    min-height: 100px;
+    min-width: 100px;
+    border: 2px solid var(--light-white-color);
+}
+
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.buttons button {
+    width: 100%;
+}
+
+.other-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.other-item {
+    background: var(--tile-end-gradient);
+    border: 1px solid var(--tile-border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}

@@ -21,7 +21,7 @@ const DiscussionPage = async () => {
                 authorPhotoUrl: data.authorPhotoUrl,
                 movieId: data.movieId,
                 movieTitle: data.movieTitle,
-                heartCount: data.heartCount,
+                heartIds: data.heartIds,
             }
         }
     )

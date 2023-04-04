@@ -1,4 +1,4 @@
-import admin, { app, credential } from "firebase-admin";
+import admin from "firebase-admin";
 
 import serviceAccount from "../serviceAccount.json"
 
@@ -26,7 +26,7 @@ export const getPostsByMovieId = async (movieId: string) => {
                 authorId: post.authorId,
                 authorName: post.authorName,
                 authorPhotoUrl: post.authorPhotoUrl,
-                heartCount: post.heartCount,
+                heartIds: post.heartIds,
                 movieId: post.movieId,
                 movieTitle: post.movieTitle,
                 published: post.published,
@@ -43,4 +43,5 @@ export const getPostsByMovieId = async (movieId: string) => {
 }
 
 export const serverTimestamp = admin.firestore.FieldValue.serverTimestamp;
-// export const fromMillis = firebase.firestore.Timestamp.fromMillis;
+export const arrayUnion = admin.firestore.FieldValue.arrayUnion;
+export const arrayRemove = admin.firestore.FieldValue.arrayRemove;

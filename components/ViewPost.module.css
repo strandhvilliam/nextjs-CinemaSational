@@ -4,6 +4,7 @@
     flex-direction: column;
     width: 100%;
     min-width: 30rem;
+    max-width: 30rem;
     height: 42rem;
     padding: 2.6rem;
     gap: 1rem;
@@ -45,18 +46,23 @@
     overflow: hidden;
 }
 
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--tile-start-gradient));
+    opacity: 0.8;
+    z-index: 1;
+}
+
 
 .content h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
-}
-
-.content p {
-    font-size: 1.1rem;
-    line-height: 1.2;
-    max-height: 17rem;
-    overflow: hidden;
 }
 
 

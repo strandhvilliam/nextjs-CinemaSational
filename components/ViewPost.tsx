@@ -29,7 +29,7 @@ const ViewPost = ( { post }: {post: Post} ) => {
                     </ReactMarkdown>
                 </div>
                 <div className={styles.bottom}>
-                    <Link className={styles.link} href={`post/${post.authorId}/${post.slug}`}>Read full post</Link>
+                    <Link className={styles.link} href={`user/${post.authorId}/${post.slug}`}>Read full post</Link>
                 </div>
             </Card>
         </li>

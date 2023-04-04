@@ -8,7 +8,7 @@ interface Post {
     authorId: string;
     authorName: string;
     authorPhotoUrl: string;
-    heartCount: number;
+    heartIds: string[];
     movieId: string;
     movieTitle: string;
 

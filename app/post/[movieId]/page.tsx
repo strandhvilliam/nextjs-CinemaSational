@@ -19,6 +19,7 @@ const CreatePage = ({params}: any) => {
     const [toastIsActive, setToastIsActive] = useState<boolean>(false);
     const [title, setTitle] = useState<string>('');
     const [slug, setSlug] = useState<string>('');
+    const [content, setContent] = useState<string>('');
 
     useEffect(() => {
         const initMovie = async (movieId: string) => {
@@ -53,7 +54,7 @@ const CreatePage = ({params}: any) => {
         const post: Post = {
             slug: slug,
             title: title,
-            content: 'content',
+            content: content,
             movieId: movie!.id,
             movieTitle: movie!.title,
             authorId: auth.user!.uid,
@@ -62,7 +63,7 @@ const CreatePage = ({params}: any) => {
             published: true,
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString(),
-            heartCount: 0,
+            heartIds: [],
         }
 
         const res = await fetch('http://localhost:3000/api/post', {
@@ -129,6 +130,7 @@ const CreatePage = ({params}: any) => {
                             <textarea
                                 className={styles['content-input']}
                                 id="content"
+                                onChange={(e) => setContent(e.target.value)}
                                 placeholder="Content"
                                 rows={10}/>
                         </div>

@@ -15,8 +15,6 @@ N
 components/PostItem.module.css,f/3/f38cf549bd0eed49579008b8d53e543359da8e72
 E
 .vscode/settings.json,8/9/89aa447020cdcb580cea0495694d46a55941edbe
-X
-(app/user/[userId]/UserProfile.module.css,a/2/a2ad1066cdeb0e94f106fd3d13c6616ae4901880
 M
 components/UI/Card.module.css,0/6/06d19ac14aa4d0b6b4cb03eddedf43adedc6b1bd
 \
@@ -34,8 +32,6 @@ R
 @
 public/heart.svg,4/6/46a451b2960fcaaac1989e635d54b97591f102e1
 ?
-app/loading.tsx,6/9/69c0ab637b92d9f081a7292223625dc93b7d8e57
-?
 public/menu.svg,5/c/5cd9fd4b56116160b45640e668dca184aa54b47e
 L
 components/UI/MenuButton.tsx,1/b/1ba710f25326daec4b26d183c109761b6cb4b281
@@ -45,8 +41,6 @@ O
 components/UI/OptionsButton.tsx,0/d/0d41b865f473b18691069e83122b6c72aebc6508
 B
 app/login/page.tsx,e/f/ef6d8010637089bf88bdd08921e2d29ff2928fa4
-J
-app/user/[userId]/page.tsx,2/4/24b53ac4fe067c098c051f357554e08284c919d1
 E
 components/Popups.tsx,b/7/b7c739331848fd0b53ed7a6d19bc9448b0f9f294
 Q
@@ -61,8 +55,6 @@ M
 app/movie/[movieId]/error.tsx,b/e/bea3809f7944414f928e84b2a3ecddad2e116bdd
 L
 app/search/[query]/error.tsx,e/d/edffe87a76f5a5d449a76aee4fef5f1fc40d71d7
-K
-components/UI/Searchbar.tsx,3/b/3b8a31290de82baac33b452f478472e06e22099e
 G
 lib/interfaces/video.ts,9/5/955a38a5022433aae53153e207b93c6d1dc54665
 >
@@ -79,12 +71,8 @@ G
 components/MovieRow.tsx,6/b/6b95a262390e9c629603f84687e8cefa6fb1053d
 K
 components/YoutubeEmbed.tsx,e/8/e84f3bf94eedc7dcdbd2b44b4491b20b1a09290b
-C
-app/page.module.css,0/0/00c8fe343d522be82901f8301f0920b81cc8a0b9
 O
 components/UI/Button.module.css,7/e/7ed49226158cc1a4d25872599483f86787adc169
-N
-components/ViewPost.module.css,2/c/2c0bd7fefb18b0f365b20d68f540041ed584b583
 P
  components/Navigation.module.css,a/d/ad97b091637fe5f45a932825de63b961e59f4c97
 O
@@ -99,8 +87,6 @@ N
 components/MovieRow.module.css,a/3/a3dc7b6911c59647b0fcee697428fc29b31aa1b9
 X
 (app/search/[query]/SearchPage.module.css,3/8/3832c29847a8925a5f9b5b34e25e3e27884fa7cd
-R
-"app/category/[categoryId]/page.tsx,5/5/5574acee8e4a4441bdff6fc89c882be574c75e88
 H
 components/MovieCast.tsx,7/3/73f16a9a5bbed5c2a1443bd3aeced29c668d50db
 L
@@ -111,21 +97,9 @@ J
 lib/interfaces/category.ts,a/c/ac51f8fa7d3542434842af7236f564c954618d6c
 H
 lib/interfaces/credit.ts,f/f/ffbb620a4dcc56e844c6a95bf7153af1b2192811
-K
-app/search/[query]/page.tsx,6/5/65cc5b60dce75f5687424ea8cbee4481ed8e44d1
-H
-components/MovieGrid.tsx,7/6/769dedce2730af97517b7a5d42466ff933cab3a9
 O
 components/MovieGrid.module.css,b/6/b6f412a22350197dad7d847633ed521fa3a343cc
-<
-app/page.tsx,6/f/6f76c4f4dad83442e836edc16c9735cb7bb32a73
 G
 lib/serviceAccount.json,2/d/2dca812c08b5ce91bae5203fff0077b60ba5a8bd
-G
-components/PostItem.tsx,6/8/683e058bc7c284ac8c8d57d131bb4181dc77f6fb
-F
-app/api/hello/route.ts,6/5/65cd700c96c8dac5e76474ca44be579d41676131
 O
 lib/firebase/firebase-client.ts,a/c/ac289d33c4f58f8f36d9c9af9123308019a3355a
-J
-components/MoviePoster.tsx,b/9/b969c87f9a639a6a8dbcc5193c0045591ff9c31f

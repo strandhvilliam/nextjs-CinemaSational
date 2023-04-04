@@ -11,8 +11,6 @@ C
 public/close.svg,6/d/6d2a4c897f9c805660d29d1da99a76ce7949d59e
 D
 app/error.module.css,0/5/05c560a43b361d5e60e3fcb0f1ef922637a9104d
-?
-app/loading.tsx,6/9/69c0ab637b92d9f081a7292223625dc93b7d8e57
 J
 lib/interfaces/userData.ts,3/d/3d95d2348fbbea0fdb3a3d1002f2eec8b371ac96
 L
@@ -33,10 +31,6 @@ N
 components/PostItem.module.css,f/3/f38cf549bd0eed49579008b8d53e543359da8e72
 E
 .vscode/settings.json,8/9/89aa447020cdcb580cea0495694d46a55941edbe
-J
-app/user/[userId]/page.tsx,2/4/24b53ac4fe067c098c051f357554e08284c919d1
-X
-(app/user/[userId]/UserProfile.module.css,a/2/a2ad1066cdeb0e94f106fd3d13c6616ae4901880
 M
 components/UI/Card.module.css,0/6/06d19ac14aa4d0b6b4cb03eddedf43adedc6b1bd
 ?
@@ -65,8 +59,6 @@ G
 lib/interfaces/video.ts,9/5/955a38a5022433aae53153e207b93c6d1dc54665
 K
 components/MovieButtons.tsx,0/9/09d672fb7325f79d22b18e42fc1ed0374e66828a
-K
-components/UI/Searchbar.tsx,3/b/3b8a31290de82baac33b452f478472e06e22099e
 M
 app/movie/[movieId]/error.tsx,b/e/bea3809f7944414f928e84b2a3ecddad2e116bdd
 R
@@ -79,22 +71,16 @@ G
 components/MovieRow.tsx,6/b/6b95a262390e9c629603f84687e8cefa6fb1053d
 K
 components/YoutubeEmbed.tsx,e/8/e84f3bf94eedc7dcdbd2b44b4491b20b1a09290b
-C
-app/page.module.css,0/0/00c8fe343d522be82901f8301f0920b81cc8a0b9
 L
 components/UI/DownButton.tsx,4/c/4cbaa7f6cbb0def597d8f1ee971aff7544e56dc8
 O
 components/UI/Button.module.css,7/e/7ed49226158cc1a4d25872599483f86787adc169
-N
-components/ViewPost.module.css,2/c/2c0bd7fefb18b0f365b20d68f540041ed584b583
 P
  components/Navigation.module.css,a/d/ad97b091637fe5f45a932825de63b961e59f4c97
 O
 components/MovieCast.module.css,7/6/76e16dbda79d83b113f3b6987fad5caa777b4614
 H
 components/MovieCast.tsx,7/3/73f16a9a5bbed5c2a1443bd3aeced29c668d50db
-R
-"app/category/[categoryId]/page.tsx,5/5/5574acee8e4a4441bdff6fc89c882be574c75e88
 H
 lib/interfaces/credit.ts,f/f/ffbb620a4dcc56e844c6a95bf7153af1b2192811
 a
@@ -107,25 +93,13 @@ S
 #components/VideoScroller.module.css,f/3/f3a0ec57b0cb4c35f530453c852e0c096c332324
 ?
 app/globals.css,4/d/4dfa49b1332116153eb16507891285845e9ab86e
-K
-app/search/[query]/page.tsx,6/5/65cc5b60dce75f5687424ea8cbee4481ed8e44d1
 N
 components/MovieRow.module.css,a/3/a3dc7b6911c59647b0fcee697428fc29b31aa1b9
 X
 (app/search/[query]/SearchPage.module.css,3/8/3832c29847a8925a5f9b5b34e25e3e27884fa7cd
-H
-components/MovieGrid.tsx,7/6/769dedce2730af97517b7a5d42466ff933cab3a9
 O
 components/MovieGrid.module.css,b/6/b6f412a22350197dad7d847633ed521fa3a343cc
-<
-app/page.tsx,6/f/6f76c4f4dad83442e836edc16c9735cb7bb32a73
-G
-components/PostItem.tsx,6/8/683e058bc7c284ac8c8d57d131bb4181dc77f6fb
 G
 lib/serviceAccount.json,2/d/2dca812c08b5ce91bae5203fff0077b60ba5a8bd
-F
-app/api/hello/route.ts,6/5/65cd700c96c8dac5e76474ca44be579d41676131
 O
 lib/firebase/firebase-client.ts,a/c/ac289d33c4f58f8f36d9c9af9123308019a3355a
-J
-components/MoviePoster.tsx,b/9/b969c87f9a639a6a8dbcc5193c0045591ff9c31f

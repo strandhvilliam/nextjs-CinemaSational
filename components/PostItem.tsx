@@ -30,7 +30,7 @@ const PostItem = ({post}: Props) => {
                            alt={"heart"}
                            src={"/heart.svg"}
                     />
-                    {post.heartCount}
+                    {post.heartIds.length}
                 </Button>
                 <OptionsButton className={styles.options}/>
             </div>
