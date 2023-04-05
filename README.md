@@ -3,7 +3,7 @@
 
 # nextjs-Cinema-Sational-app
 
-Cinema-Sational is a web app built using Next.js, React, TypeScript, and Firebase for authentication and database. It is a movie website that allows users to view new and upcoming movies, search for movies, and log in to create posts and comments.
+Cinema-Sational is a web app built using Next.js, React, TypeScript, and Firebase for auth and db. It is a movie website that allows users to view new and upcoming movies, search for movies, and log in to create posts and comments.
 
 ## Technologies Used
 
