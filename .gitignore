@@ -37,6 +37,7 @@ next-env.d.ts
 
 # idea folder
 /.idea
+.idea
 
 # vscode folder
 /.vscode
