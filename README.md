@@ -1,3 +1,6 @@
+![Screenshot 2023-04-05 at 21 28 11](https://user-images.githubusercontent.com/87245022/230194750-db91b58a-ecb2-4c77-bfbb-c231830815d8.jpeg)
+
+
 # nextjs-Cinema-Sational-app
 
 Cinema-Sational is a web app built using Next.js, React, TypeScript, and CSS, and hosted with Firebase. It is a movie website that allows users to view new and upcoming movies, search for movies, and log in to create posts and comments.
@@ -18,6 +21,9 @@ View a page of all movies with information and links to websites where the movie
 Log in using Firebase Auth and Google accounts.
 Logged-in users can create posts to comment on or review movies.
 Posts are displayed on the movie page and on the user's profile page.
+
+![Screenshot 2023-04-05 at 21 37 28](https://user-images.githubusercontent.com/87245022/230195067-2481e23c-49a5-4b24-b31d-ac67371c39f8.jpeg)
+
 
 ## Getting Started
 To get started with Cinema-Sational, follow these steps:
