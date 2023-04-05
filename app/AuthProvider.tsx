@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from "react";
-import { auth, firestore, googleAuthProvider } from "@/lib/firebase/firebase-client";
+import { auth, firestore, googleAuthProvider } from "@/app/lib/firebase/firebase-client";
 import { User } from "@firebase/auth";
 
 interface Props {

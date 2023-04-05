@@ -1,20 +1,23 @@
 import styles from './SearchPage.module.css'
-import MovieRow from "@/components/MovieRow";
-import MovieGrid from "@/components/MovieGrid";
-import { Movie } from "@/lib/interfaces/movie";
-import { getMoviesBySearch, getPopularMovies } from "@/lib/tmdb/tmdb";
+import Row from "@/app/components/UI/Row";
+import Grid from "@/app/components/UI/Grid";
+import { Movie } from "@/app/lib/interfaces/movie";
+import { getMoviesBySearch, getPopularMovies } from "@/app/lib/tmdb/tmdb";
+import MoviePoster from "@/app/components/MoviePoster";
 
 const SearchPage = async ( { params }: any) => {
 
     // const popularMovies: Movie[] = await getPopularMovies();
     const results: Movie[] = await getMoviesBySearch(params.query);
 
-
-
     return (
         <div className={styles.container}>
             <h1>Search results for &quot;{decodeURIComponent(params.query)}&quot;</h1>
-            <MovieGrid content={results}/>
+            <Grid>
+                {results.map((movie: Movie) => (
+                    <MoviePoster key={movie.id} movie={movie}/>
+                ))}
+            </Grid>
         </div>
     );
 };

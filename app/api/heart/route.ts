@@ -1,4 +1,4 @@
-import { arrayRemove, arrayUnion, db } from "@/lib/firebase/firebase-server";
+import { arrayRemove, arrayUnion, db } from "@/app/lib/firebase/firebase-server";
 
 export async function POST(request: Request) {
 

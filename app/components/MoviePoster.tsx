@@ -1,6 +1,6 @@
 import styles from './MoviePoster.module.css'
 import Image from "next/image";
-import { Movie } from "@/lib/interfaces/movie";
+import { Movie } from "@/app/lib/interfaces/movie";
 import Link from "next/link";
 
 interface Props {

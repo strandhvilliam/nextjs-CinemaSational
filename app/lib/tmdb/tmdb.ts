@@ -1,8 +1,8 @@
-import { Movie } from "@/lib/interfaces/movie";
+import { Movie } from "@/app/lib/interfaces/movie";
 import { notFound } from "next/navigation";
-import { Video } from "@/lib/interfaces/video";
-import { Credit } from "@/lib/interfaces/credit";
-import { Category } from "@/lib/interfaces/category";
+import { Video } from "@/app/lib/interfaces/video";
+import { Credit } from "@/app/lib/interfaces/credit";
+import { Category } from "@/app/lib/interfaces/category";
 
 export const getMovieById = async (id: string) => {
     const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API_KEY}&language=en-US`,

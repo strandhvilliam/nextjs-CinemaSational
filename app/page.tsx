@@ -1,8 +1,8 @@
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
-import { db } from "@/lib/firebase/firebase-server";
+import { db } from "@/app/lib/firebase/firebase-server";
 import Link from "next/link";
-import MoviePoster from "@/components/MoviePoster";
+import MoviePoster from "@/app/components/MoviePoster";
 
 const inter = Inter({subsets: ['latin']})
 import {
@@ -11,9 +11,9 @@ import {
     getTopRatedMovies,
     getTrendingMovies,
     getUpcomingMovies
-} from "@/lib/tmdb/tmdb";
-import MovieRow from "@/components/MovieRow";
-import { Movie } from "@/lib/interfaces/movie";
+} from "@/app/lib/tmdb/tmdb";
+import Row from "@/app/components/UI/Row";
+import { Movie } from "@/app/lib/interfaces/movie";
 
 export default async function Home() {
 
@@ -28,22 +28,36 @@ export default async function Home() {
             <div className={styles.container}>
                 <div className={styles.group}>
                     <h2>Trending</h2>
-                    <MovieRow content={trendingMovies}/>
+                    <Row>
+                        {trendingMovies.map((movie: Movie) => (
+                            <MoviePoster key={movie.id} movie={movie}/>
+                        ))}
+                    </Row>
                 </div>
                 <div className={styles.group}>
                     <h2>Popular</h2>
-                    <MovieRow content={popularMovies}/>
+                    <Row>
+                        {popularMovies.map((movie: Movie) => (
+                        <MoviePoster key={movie.id} movie={movie}/>
+                    ))}
+                    </Row>
                 </div>
                 <div className={styles.group}>
                     <h2>Upcoming</h2>
-                    <MovieRow content={upcomingMovies}/>
+                    <Row>
+                        {upcomingMovies.map((movie: Movie) => (
+                        <MoviePoster key={movie.id} movie={movie}/>
+                    ))}
+                    </Row>
                 </div>
                 <div className={styles.group}>
                     <h2>Top Rated</h2>
-                    <MovieRow content={topRatedMovies}/>
+                    <Row>
+                        {topRatedMovies.map((movie: Movie) => (
+                        <MoviePoster key={movie.id} movie={movie}/>
+                    ))}
+                    </Row>
                 </div>
-
-
             </div>
         </main>
 

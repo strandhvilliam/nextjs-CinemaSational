@@ -1,5 +1,5 @@
 import styles from './PostFeed.module.css'
-import PostItem from "@/components/PostItem";
+import SmallPostItem from "@/app/components/SmallPostItem";
 
 /*const MOCK_POSTS: Post[] = [
     {
@@ -64,7 +64,7 @@ const PostFeed = () => {
     return (
         <div className={styles.feed}>
             {/*{MOCK_POSTS.map((post) => (
-                <PostItem post={post} key={post.id} />
+                <SmallPostItem post={post} key={post.id} />
             ))}*/}
         </div>
     );

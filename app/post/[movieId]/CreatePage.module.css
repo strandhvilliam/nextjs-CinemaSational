@@ -123,8 +123,6 @@
 .item {
     padding: 0.4rem;
     border-radius: 0.5rem;
-    /*background: var(--input-primary-background);*/
-    /*border: 1px solid var(--tile-border-color);*/
     color: var(--light-white-color);
 }
 
@@ -137,4 +135,57 @@
 
 .close-button:hover {
     opacity: 1;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .container {
+        width: 90%;
+        height: 100%;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .content-input {
+        height: 40rem;
+    }
+
+    .close-button {
+        top: 0;
+        right: 0;
+        transform: scale(0.6);
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .container {
+        width: 100%;
+        padding: 2.4rem 1rem;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .title-input {
+        font-size: 1.4rem;
+        height: 4rem;
+    }
+
+    .content-input {
+        height: 30rem;
+        font-size: 1rem;
+    }
+
+    .form {
+        padding: 0;
+        gap: 0;
+    }
+
+
 }

@@ -1,11 +1,11 @@
 'use client';
 import { useAuth } from "@/app/AuthProvider";
-import { HeartReqData } from "@/lib/interfaces/heartReqData";
+import { HeartReqData } from "@/app/lib/interfaces/heartReqData";
 import styles from "./UserPost.module.css";
-import Button from "@/components/UI/Button";
+import Button from "@/app/components/UI/Button";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
-import Loader from "@/components/UI/Loader";
+import Loader from "@/app/components/UI/Loader";
 
 
 const UserPostButtons = ( { post }: { post: Post}) => {

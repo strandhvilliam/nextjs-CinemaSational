@@ -1,7 +1,7 @@
 'use client';
 import styles from "@/app/error.module.css";
 import Link from "next/link";
-import Card from "@/components/UI/Card";
+import Card from "@/app/components/UI/Card";
 
 const SearchError = () => {
     return (

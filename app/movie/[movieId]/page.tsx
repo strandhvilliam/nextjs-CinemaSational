@@ -1,17 +1,17 @@
 import styles from "./MoviePage.module.css";
-import { Movie } from "@/lib/interfaces/movie";
+import { Movie } from "@/app/lib/interfaces/movie";
 import Image from "next/image";
-import { getMovieById, getMovieCredits, getMovieVideos } from "@/lib/tmdb/tmdb";
+import { getMovieById, getMovieCredits, getMovieVideos } from "@/app/lib/tmdb/tmdb";
 import MovieButtons from "@/app/movie/[movieId]/MovieButtons";
-import DownButton from "@/components/UI/DownButton";
+import DownButton from "@/app/components/UI/DownButton";
 import VideoScroller from "@/app/movie/[movieId]/VideoScroller";
-import { Video } from "@/lib/interfaces/video";
-import { Credit } from "@/lib/interfaces/credit";
+import { Video } from "@/app/lib/interfaces/video";
+import { Credit } from "@/app/lib/interfaces/credit";
 import MovieCast from "@/app/movie/[movieId]/MovieCast";
-import ViewPost from "@/components/ViewPost";
-import MoviePoster from "@/components/MoviePoster";
+import ViewPost from "@/app/movie/[movieId]/ViewPost";
+import MoviePoster from "@/app/components/MoviePoster";
 import Link from "next/link";
-import { db, getPostsByMovieId } from "@/lib/firebase/firebase-server";
+import { db, getPostsByMovieId } from "@/app/lib/firebase/firebase-server";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 

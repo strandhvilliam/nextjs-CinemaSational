@@ -1,12 +1,12 @@
 import styles from './UserPost.module.css'
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import { db, getPostsByMovieId } from "@/lib/firebase/firebase-server";
+import { db, getPostsByMovieId } from "@/app/lib/firebase/firebase-server";
 import UserPostButtons from "@/app/user/[userId]/[slug]/UserPostButtons";
 import Link from "next/link";
-import MoviePoster from "@/components/MoviePoster";
-import { getMovieById } from "@/lib/tmdb/tmdb";
-import { Movie } from "@/lib/interfaces/movie";
+import MoviePoster from "@/app/components/MoviePoster";
+import { getMovieById } from "@/app/lib/tmdb/tmdb";
+import { Movie } from "@/app/lib/interfaces/movie";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 
@@ -51,8 +51,8 @@ const UserPost = async ({params}: any) => {
                     </div>
                 </div>
                 <MoviePoster movie={movie} />
-                <h3>Other posts about {post.movieTitle}</h3>
                 <ul className={styles['other-list']}>
+                    <h3>Other posts about {post.movieTitle}</h3>
                     {posts.slice(0, 5).map((post: Post) => (
                         <li className={styles['other-item']} key={post.slug}>
                             <Link href={`/user/${post.authorId}/${post.slug}`}>

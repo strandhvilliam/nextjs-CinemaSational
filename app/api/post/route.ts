@@ -1,4 +1,4 @@
-import { db, serverTimestamp } from "@/lib/firebase/firebase-server";
+import { db, serverTimestamp } from "@/app/lib/firebase/firebase-server";
 
 export async function POST(request: Request) {
 

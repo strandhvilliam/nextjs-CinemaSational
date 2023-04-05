@@ -1,6 +1,6 @@
 import styles from './MovieCast.module.css'
 import Image from "next/image";
-import { Credit } from "@/lib/interfaces/credit";
+import { Credit } from "@/app/lib/interfaces/credit";
 
 interface Props {
     cast: Credit[],

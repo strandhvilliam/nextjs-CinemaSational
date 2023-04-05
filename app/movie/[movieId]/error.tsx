@@ -3,7 +3,7 @@
 import styles from '../../error.module.css'
 
 import Link from "next/link";
-import Card from "@/components/UI/Card";
+import Card from "@/app/components/UI/Card";
 
 export default function MovieError() {
     return (

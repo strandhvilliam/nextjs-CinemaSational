@@ -1,4 +1,4 @@
-import { getMovieById } from "@/lib/tmdb/tmdb";
+import { getMovieById } from "@/app/lib/tmdb/tmdb";
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);

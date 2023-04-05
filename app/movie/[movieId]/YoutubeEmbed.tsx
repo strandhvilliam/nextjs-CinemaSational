@@ -1,7 +1,7 @@
 'use client'
 import styles from './YoutubeEmbed.module.css'
 import { useState } from "react";
-import Loader from "@/components/UI/Loader";
+import Loader from "@/app/components/UI/Loader";
 
 
 interface Props {

@@ -1,7 +1,6 @@
 import styles from "./ViewPost.module.css";
-import Card from "@/components/UI/Card";
+import Card from "@/app/components/UI/Card";
 import Image from "next/image";
-import Button from "@/components/UI/Button";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 

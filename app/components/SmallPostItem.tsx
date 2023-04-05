@@ -1,17 +1,17 @@
 'use client';
 
-import styles from './PostItem.module.css'
+import styles from './SmallPostItem.module.css'
 import Image from "next/image";
 import { useState } from "react";
-import Card from "@/components/UI/Card";
-import Button from "@/components/UI/Button";
-import OptionsButton from "@/components/UI/OptionsButton";
+import Card from "@/app/components/UI/Card";
+import Button from "@/app/components/UI/Button";
+import OptionsButton from "@/app/components/UI/OptionsButton";
 
 interface Props {
     post: Post
 }
 
-const PostItem = ({post}: Props) => {
+const SmallPostItem = ({post}: Props) => {
 
 
     return (
@@ -38,4 +38,4 @@ const PostItem = ({post}: Props) => {
     );
 };
 
-export default PostItem;
+export default SmallPostItem;

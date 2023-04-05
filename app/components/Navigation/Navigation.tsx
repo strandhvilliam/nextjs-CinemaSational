@@ -2,19 +2,19 @@
 import styles from './Navigation.module.css'
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import CloseButton from "@/components/UI/CloseButton";
+import CloseButton from "@/app/components/UI/CloseButton";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "@/components/UI/Logo";
-import MenuButton from "@/components/UI/MenuButton";
-import Searchbar from "@/components/UI/Searchbar";
-import Card from "@/components/UI/Card";
-import Button from "@/components/UI/Button";
-import SecondaryButton from "@/components/UI/SecondaryButton";
+import Logo from "@/app/components/UI/Logo";
+import MenuButton from "@/app/components/UI/MenuButton";
+import Searchbar from "@/app/components/UI/Searchbar";
+import Card from "@/app/components/UI/Card";
+import Button from "@/app/components/UI/Button";
+import SecondaryButton from "@/app/components/UI/SecondaryButton";
 import { useAuth } from "@/app/AuthProvider";
 import { User } from "@firebase/auth";
 import toast from "react-hot-toast";
-import { Category } from "@/lib/interfaces/category";
+import { Category } from "@/app/lib/interfaces/category";
 
 interface Props {
     categories: Category[]

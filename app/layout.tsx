@@ -1,11 +1,11 @@
 import './globals.css'
 import { ReactNode } from "react";
 import AuthProvider from "@/app/AuthProvider";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/app/components/Navigation/Navigation";
 import { Toaster } from "react-hot-toast";
-import Popups from "@/components/Popups";
-import { getMovieGenres } from "@/lib/tmdb/tmdb";
-import { Category } from "@/lib/interfaces/category";
+import Popups from "@/app/Popups";
+import { getMovieGenres } from "@/app/lib/tmdb/tmdb";
+import { Category } from "@/app/lib/interfaces/category";
 
 export const metadata = {
     title: 'Create Next App',

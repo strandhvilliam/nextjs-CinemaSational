@@ -1,12 +1,12 @@
 'use client';
 
 import styles from './CreatePage.module.css'
-import Button from "@/components/UI/Button";
-import CloseButton from "@/components/UI/CloseButton";
+import Button from "@/app/components/UI/Button";
+import CloseButton from "@/app/components/UI/CloseButton";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { Movie } from "@/lib/interfaces/movie";
+import { Movie } from "@/app/lib/interfaces/movie";
 import { useAuth } from "@/app/AuthProvider";
-import Loader from "@/components/UI/Loader";
+import Loader from "@/app/components/UI/Loader";
 import { redirect, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 

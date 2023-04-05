@@ -1,15 +1,15 @@
 'use client'
 
 import Image from "next/image";
-import Card from "@/components/UI/Card";
+import Card from "@/app/components/UI/Card";
 import styles from './Login.module.css'
-import Button from "@/components/UI/Button";
-import Logo from "@/components/UI/Logo";
+import Button from "@/app/components/UI/Button";
+import Logo from "@/app/components/UI/Logo";
 import { useAuth } from "@/app/AuthProvider";
-import Loader from "@/components/UI/Loader";
+import Loader from "@/app/components/UI/Loader";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import SecondaryButton from "@/components/UI/SecondaryButton";
+import SecondaryButton from "@/app/components/UI/SecondaryButton";
 
 export default function Login() {
 

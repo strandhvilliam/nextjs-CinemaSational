@@ -1,5 +1,5 @@
 'use client';
-import Loader from "@/components/UI/Loader";
+import Loader from "@/app/components/UI/Loader";
 import styles from './Loading.module.css'
 
 export default function Loading() {

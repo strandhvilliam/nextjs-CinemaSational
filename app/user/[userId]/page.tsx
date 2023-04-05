@@ -1,7 +1,7 @@
 import styles from './UserProfile.module.css'
 import Image from "next/image";
-import PostFeed from "@/components/PostFeed";
-import { db } from "@/lib/firebase/firebase-server";
+import PostFeed from "@/app/components/PostFeed";
+import { db } from "@/app/lib/firebase/firebase-server";
 
 interface UserData {
     photoURL: string,

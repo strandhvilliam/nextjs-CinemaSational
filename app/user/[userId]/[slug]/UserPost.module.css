@@ -101,3 +101,43 @@
     border-radius: 0.5rem;
     padding: 1rem;
 }
+
+
+@media (max-width: 900px) {
+    .container {
+        margin-top: 8rem;
+        flex-direction: column-reverse;
+
+    }
+
+    .main {
+        margin-top: 0;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+    .side {
+        margin-top: 0;
+        max-height: 22rem;
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .side li {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+
+    }
+
+    .side li img {
+        width: 12rem;
+    }
+
+    .other-list {
+        display: none;
+    }
+
+
+}

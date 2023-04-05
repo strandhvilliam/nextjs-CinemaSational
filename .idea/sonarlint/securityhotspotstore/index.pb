@@ -37,8 +37,6 @@ M
 ,.idea/inspectionProfiles/Project_Default.xml,4/9/496a238a6afa168dbaf6efd37bb459331589579c
 O
 components/UI/Loader.module.css,9/8/9829422ea930be09b23f4385c98434952bb104da
-B
-app/login/page.tsx,e/f/ef6d8010637089bf88bdd08921e2d29ff2928fa4
 ?
 public/down.svg,5/5/55ea1a520355d40eb6124e40dfbc2fa430725c22
 T
@@ -49,12 +47,8 @@ H
 components/UI/Loader.tsx,b/b/bb8f59decddd958c436c234bb313fa8827b20625
 >
 next.config.js,8/1/811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
-L
-app/search/[query]/error.tsx,e/d/edffe87a76f5a5d449a76aee4fef5f1fc40d71d7
 G
 lib/interfaces/video.ts,9/5/955a38a5022433aae53153e207b93c6d1dc54665
-M
-app/movie/[movieId]/error.tsx,b/e/bea3809f7944414f928e84b2a3ecddad2e116bdd
 R
 "components/YoutubeEmbed.module.css,d/9/d9bd2d9f16c0154cacdb6c9facfef769cb40b59d
 F
@@ -83,7 +77,5 @@ S
 #components/VideoScroller.module.css,f/3/f3a0ec57b0cb4c35f530453c852e0c096c332324
 ?
 app/globals.css,4/d/4dfa49b1332116153eb16507891285845e9ab86e
-X
-(app/search/[query]/SearchPage.module.css,3/8/3832c29847a8925a5f9b5b34e25e3e27884fa7cd
 G
 lib/serviceAccount.json,2/d/2dca812c08b5ce91bae5203fff0077b60ba5a8bd

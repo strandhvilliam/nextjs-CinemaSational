@@ -37,8 +37,6 @@ B
 public/options.svg,2/4/244df0d9ef2dfc876c97bef2951eacf8be02bdd5
 O
 components/UI/OptionsButton.tsx,0/d/0d41b865f473b18691069e83122b6c72aebc6508
-B
-app/login/page.tsx,e/f/ef6d8010637089bf88bdd08921e2d29ff2928fa4
 Q
 !components/UI/SecondaryButton.tsx,f/7/f73b18b6cc1794bdae0fc8b3d75e38ab85a02988
 ?
@@ -47,10 +45,6 @@ J
 lib/interfaces/userData.ts,3/d/3d95d2348fbbea0fdb3a3d1002f2eec8b371ac96
 H
 components/UI/Loader.tsx,b/b/bb8f59decddd958c436c234bb313fa8827b20625
-M
-app/movie/[movieId]/error.tsx,b/e/bea3809f7944414f928e84b2a3ecddad2e116bdd
-L
-app/search/[query]/error.tsx,e/d/edffe87a76f5a5d449a76aee4fef5f1fc40d71d7
 G
 lib/interfaces/video.ts,9/5/955a38a5022433aae53153e207b93c6d1dc54665
 >
@@ -73,8 +67,6 @@ S
 #components/VideoScroller.module.css,f/3/f3a0ec57b0cb4c35f530453c852e0c096c332324
 ?
 app/globals.css,4/d/4dfa49b1332116153eb16507891285845e9ab86e
-X
-(app/search/[query]/SearchPage.module.css,3/8/3832c29847a8925a5f9b5b34e25e3e27884fa7cd
 H
 components/MovieCast.tsx,7/3/73f16a9a5bbed5c2a1443bd3aeced29c668d50db
 L

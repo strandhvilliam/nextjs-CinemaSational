@@ -1,7 +1,7 @@
 import styles from './Discussion.module.css'
-import PostItem from "@/components/PostItem";
-import { db } from "@/lib/firebase/firebase-server";
-import Logo from "@/components/UI/Logo";
+import SmallPostItem from "@/app/components/SmallPostItem";
+import { db } from "@/app/lib/firebase/firebase-server";
+import Logo from "@/app/components/UI/Logo";
 
 const DiscussionPage = async () => {
 
@@ -27,7 +27,7 @@ const DiscussionPage = async () => {
     )
 
     const content = posts.map((post: Post) => (
-        <PostItem key={post.slug} post={post}/>))
+        <SmallPostItem key={post.slug} post={post}/>))
 
 
     return (
