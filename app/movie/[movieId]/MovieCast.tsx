@@ -17,7 +17,7 @@ const MovieCast = ({cast, className }: Props) => {
             <ul className={styles.row}>
                 {cast.map((credit: Credit) => (
                     <li key={credit.id}>
-                        <Image className={styles['profile-image']} src={`${IMG_URL}${credit.profilePath}`} alt={credit.name} width={240} height={240}/>
+                        <Image className={styles['profile-image']} src={`${credit.profilePath ? IMG_URL.concat(credit.profilePath) : '/placeholder-user.png'}`} alt={credit.name} width={240} height={240}/>
                     </li>
                 ))}
             </ul>

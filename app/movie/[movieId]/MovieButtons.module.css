@@ -4,6 +4,7 @@
     width: 100%;
     gap: 4rem;
     margin: 4rem 0 0 0;
+    position: relative;
 }
 
 .button {
@@ -26,6 +27,49 @@
 
 .button:hover {
     transform: scale(1.02);
+}
+
+.provider-list {
+    position: absolute;
+    bottom: -7.8rem;
+    display: none;
+    gap: 1rem;
+    margin-top: 1rem;
+    background: var(--tile-start-gradient);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--tile-border-color);
+    padding: 1rem 1rem 2rem 1rem;
+    min-width: 12rem;
+    z-index: 5;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.provider-note {
+    position: absolute;
+    bottom: 0;
+    width: 12rem;
+    padding: 0.3rem;
+    color: var(--light-white-color);
+}
+
+.provider-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--tile-start-gradient);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--tile-border-color);
+}
+
+.provider-image:hover {
+    filter: brightness(1.1);
+}
+
+.open {
+    display: flex;
 }
 
 @media (max-width: 900px) {

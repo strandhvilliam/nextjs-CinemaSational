@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 
-import serviceAccount from "../serviceAccount.json"
+import serviceAccount from "../../../service-account.json"
 
 if (!admin.apps.length) {
     console.log("Firebase admin initialized")

@@ -26,8 +26,7 @@ const DiscussionPage = async () => {
         }
     )
 
-    const content = posts.map((post: Post) => (
-        <SmallPostItem key={post.slug} post={post}/>))
+    const content = posts.map((post: Post) => <li key={post.slug}><SmallPostItem post={post}/></li>)
 
 
     return (
@@ -36,9 +35,6 @@ const DiscussionPage = async () => {
                 <ul className={styles.list}>
                     {content}
                 </ul>
-
-                <Logo size={"1"}/>
-
             </div>
     );
 };

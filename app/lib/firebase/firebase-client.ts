@@ -4,13 +4,13 @@ import 'firebase/compat/firestore'
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCEL8yr8q6gfANO8LylMhfI98T4I2d1sPg",
-    authDomain: "cinema-sational.firebaseapp.com",
-    projectId: "cinema-sational",
-    storageBucket: "cinema-sational.appspot.com",
-    messagingSenderId: "475304980667",
-    appId: "1:475304980667:web:7b098b7c015a4e63c3399e",
-    measurementId: "G-LZB7XYSWQC"
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 if (!firebase.apps.length) {

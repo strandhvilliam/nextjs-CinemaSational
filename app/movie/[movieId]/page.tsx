@@ -1,7 +1,7 @@
 import styles from "./MoviePage.module.css";
 import { Movie } from "@/app/lib/interfaces/movie";
 import Image from "next/image";
-import { getMovieById, getMovieCredits, getMovieVideos } from "@/app/lib/tmdb/tmdb";
+import { getMovieById, getMovieCredits, getMovieVideos, getWatchProviders } from "@/app/lib/tmdb/tmdb";
 import MovieButtons from "@/app/movie/[movieId]/MovieButtons";
 import DownButton from "@/app/components/UI/DownButton";
 import VideoScroller from "@/app/movie/[movieId]/VideoScroller";
@@ -12,10 +12,14 @@ import ViewPost from "@/app/movie/[movieId]/ViewPost";
 import MoviePoster from "@/app/components/MoviePoster";
 import Link from "next/link";
 import { getPostsByMovieId } from "@/app/lib/firebase/firebase-server";
+import { Provider } from "@/app/lib/interfaces/provider";
+import CloseButton from "@/app/components/UI/CloseButton";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 
 const MoviePage = async ({params}: any) => {
+
+    console.log('renders')
 
     const movie: Movie = await getMovieById(params.movieId);
     const videos: Video[] = await getMovieVideos(params.movieId);
@@ -31,11 +35,15 @@ const MoviePage = async ({params}: any) => {
 
     const posts: Post[] = await getPostsByMovieId(params.movieId);
 
+    const providers: Provider[] = await getWatchProviders(params.movieId);
+
+
 
     return (
         <>
+
             <div className={styles.container}>
-                <MovieView movie={movie} videoURLs={videoURLs} cast={finalCast}/>
+                <MovieView movie={movie} videoURLs={videoURLs} cast={finalCast} providers={providers}/>
                 <DownButton className={styles['down-button']}/>
                 <div className={styles.transition}></div>
             </div>
@@ -46,7 +54,7 @@ const MoviePage = async ({params}: any) => {
                         <ViewPost key={`${post.authorId}/${post.slug}`} post={post}/>
                     ))}
                 </ul>
-                <MovieCta movie={movie} />
+                <MovieCta movie={movie}/>
             </div>
         </>
     );
@@ -60,18 +68,21 @@ interface ViewProps {
     movie: Movie,
     videoURLs: string[],
     cast: Credit[],
+    providers: Provider[]
 }
 
 
-const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
+const MovieView = ({movie, videoURLs, cast, providers}: ViewProps) => {
     const background = `url(${(IMG_URL.concat(movie.backdropPath))})`
 
     const optimizeTitle = (title: string) => {
         if (title.includes(":")) {
-            return <h1 className={styles.title}>{title.split(":")[0]}:<br/>{title.split(":")[1]}</h1>
+            return <h1 className={styles.title}>{title.split(":")[0]}:<br/>{title.split(":")[1]}
+            </h1>
         }
         return <h1 className={styles.title}>{title}</h1>
     }
+
 
     return (
         <>
@@ -91,7 +102,8 @@ const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
                     </div>
                     <h3 className={styles['overview-title']}>Overview</h3>
                     <p className={styles.overview}>{movie.overview}</p>
-                    <MovieButtons movieId={movie.id} />
+                    <MovieButtons movieId={movie.id} movieTitle={movie.title} providers={providers}/>
+
                 </div>
                 <VideoScroller videosURL={videoURLs}/>
             </div>
@@ -103,7 +115,11 @@ const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
     );
 }
 
-const MovieCta = ( { movie, className }: { movie: Movie, className?: string} ) => {
+const MovieCta = ({
+                      movie, className
+                  }: {
+    movie: Movie, className?: string
+}) => {
     return (
         <div className={styles.cta}>
             <MoviePoster movie={movie}/>

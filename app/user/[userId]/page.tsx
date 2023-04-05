@@ -1,7 +1,6 @@
 import styles from './UserProfile.module.css'
 import Image from "next/image";
 import { db } from "@/app/lib/firebase/firebase-server";
-import PostFeed from "@/app/components/PostFeed";
 import { Movie } from "@/app/lib/interfaces/movie";
 import { getMovieById } from "@/app/lib/tmdb/tmdb";
 import Row from "@/app/components/UI/Row";
@@ -45,15 +44,24 @@ const UserProfilePage = async ({params}: any) => {
     });
 
 
+    const initializeFavorites = async () => {
+        const favData = await usersRef.doc(user.userId).collection('favorites').get();
+        const favoriteMovies: string[] = []
+        favData.forEach((doc) => {
+            const data = doc.data()
+            favoriteMovies.push(data.movieId)
+        })
+        return favoriteMovies
+    }
 
-    const favoriteMovies = ['181812', '181808', '1893', '550']
+
+    const favoriteMovies: string[] = await initializeFavorites();
 
 
-    const movies: Movie[] = await Promise.all(favoriteMovies.map(async (id) => {
+
+    const movies: Movie[] = await Promise.all(favoriteMovies.map(async (id: string) => {
         return await getMovieById(id)
     }));
-
-    console.log(movies)
 
 
     return (

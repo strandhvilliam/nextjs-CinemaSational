@@ -5,6 +5,8 @@ import Navigation from "@/app/components/Navigation/Navigation";
 import Popups from "@/app/Popups";
 import { getMovieGenres } from "@/app/lib/tmdb/tmdb";
 import { Category } from "@/app/lib/interfaces/category";
+import { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies";
+
 
 export const metadata = {
     title: 'Create Next App',

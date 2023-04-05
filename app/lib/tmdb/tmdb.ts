@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Video } from "@/app/lib/interfaces/video";
 import { Credit } from "@/app/lib/interfaces/credit";
 import { Category } from "@/app/lib/interfaces/category";
+import { Provider } from "@/app/lib/interfaces/provider";
 
 export const getMovieById = async (id: string) => {
     const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_API_KEY}&language=en-US`,
@@ -298,4 +299,45 @@ export const getMoviesByGenre = async (genreId: string) => {
     });
 
     return movies;
+}
+
+
+export const getWatchProviders = async (movieId: string) => {
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${process.env.TMDB_API_KEY}`)
+
+    const data = await res.json();
+
+    if (data.success === false) {
+        notFound();
+    }
+
+    if (!data.results.SE) {
+        return [];
+    }
+
+
+    const keys = Object.keys(data.results.SE).filter(key => key !== 'link');
+
+    const providers: Provider[] = keys.map((key: any) => {
+        return data.results.SE[key].map((provider: any) => {
+            return {
+                id: provider.provider_id,
+                logoPath: provider.logo_path,
+                name: provider.provider_name,
+                type: key,
+                priority: +provider.display_priority,
+            }
+        })
+    })
+        .flat()
+        .sort((a: Provider, b: Provider) => a.priority - b.priority)
+        .filter((provider: Provider, index: number, arr: Provider[]) => {
+            return (
+                index ===
+                arr.findIndex((p: Provider) => p.name === provider.name)
+            );
+        })
+        .filter((provider: Provider) => provider.logoPath !== null);
+
+    return providers;
 }

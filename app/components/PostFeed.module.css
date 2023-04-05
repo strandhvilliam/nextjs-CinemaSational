@@ -1,9 +1,0 @@
-.feed {
-    max-width: 42rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    /*margin-top: 12rem;*/
-    margin: 0 auto;
-}
