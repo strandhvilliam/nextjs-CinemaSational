@@ -3,10 +3,13 @@
 Cinema-Sational is a web app built using Next.js, React, TypeScript, and CSS, and hosted with Firebase. It is a movie website that allows users to view new and upcoming movies, search for movies, and log in to create posts and comments.
 
 ## Technologies Used
+
+[![My Skills](https://skillicons.dev/icons?i=nextjs,react,ts,firebase,)](https://skillicons.dev)
+
+
 - Next.js
 - React
 - TypeScript
-- CSS
 - Firebase
 
 ## Features
