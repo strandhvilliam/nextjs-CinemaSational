@@ -21,6 +21,11 @@
     font-family: "Raleway", sans-serif;
     width: 16rem;
     height: 5rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(1.02);
 }
 
 @media (max-width: 900px) {

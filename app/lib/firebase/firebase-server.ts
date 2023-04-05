@@ -16,7 +16,6 @@ export const getPostsByMovieId = async (movieId: string) => {
         const query = db.collectionGroup("posts").where("movieId", "==", +movieId).orderBy("createdAt", "desc");
         const snapshot = await query.get();
         const data = snapshot.docs.map((doc) => doc.data());
-        console.log("data: " + data)
 
         const posts: Post[] = data.map((post) => {
             return {

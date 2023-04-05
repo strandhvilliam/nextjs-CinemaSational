@@ -65,8 +65,6 @@ a
 1app/category/[categoryId]/CategoryPage.module.css,2/d/2da91dcbe45836c838268a7ed198c5c0ff080f88
 S
 #components/VideoScroller.module.css,f/3/f3a0ec57b0cb4c35f530453c852e0c096c332324
-?
-app/globals.css,4/d/4dfa49b1332116153eb16507891285845e9ab86e
 H
 components/MovieCast.tsx,7/3/73f16a9a5bbed5c2a1443bd3aeced29c668d50db
 L

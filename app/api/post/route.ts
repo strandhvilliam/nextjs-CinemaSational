@@ -4,8 +4,7 @@ export async function POST(request: Request) {
 
     const req: Post = await request.json();
 
-    console.log(req.slug)
-    console.log(req.authorId)
+
     const usersRef = db.collection("users").doc(req.authorId);
     const postRef = usersRef.collection("posts").doc(req.slug);
 

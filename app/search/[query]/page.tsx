@@ -1,8 +1,7 @@
 import styles from './SearchPage.module.css'
-import Row from "@/app/components/UI/Row";
 import Grid from "@/app/components/UI/Grid";
 import { Movie } from "@/app/lib/interfaces/movie";
-import { getMoviesBySearch, getPopularMovies } from "@/app/lib/tmdb/tmdb";
+import { getMoviesBySearch } from "@/app/lib/tmdb/tmdb";
 import MoviePoster from "@/app/components/MoviePoster";
 
 const SearchPage = async ( { params }: any) => {

@@ -2,7 +2,6 @@ import './globals.css'
 import { ReactNode } from "react";
 import AuthProvider from "@/app/AuthProvider";
 import Navigation from "@/app/components/Navigation/Navigation";
-import { Toaster } from "react-hot-toast";
 import Popups from "@/app/Popups";
 import { getMovieGenres } from "@/app/lib/tmdb/tmdb";
 import { Category } from "@/app/lib/interfaces/category";

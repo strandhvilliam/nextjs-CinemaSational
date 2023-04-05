@@ -17,7 +17,6 @@ export const getMovieById = async (id: string) => {
         notFound();
     }
 
-    console.log("data: " + data)
 
     const movie: Movie = {
         id: data.id,

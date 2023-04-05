@@ -7,7 +7,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Movie } from "@/app/lib/interfaces/movie";
 import { useAuth } from "@/app/AuthProvider";
 import Loader from "@/app/components/UI/Loader";
-import { redirect, useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import toast from "react-hot-toast";
 
 const CreatePage = ({params}: any) => {

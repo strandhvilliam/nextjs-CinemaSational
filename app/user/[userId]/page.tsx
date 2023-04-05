@@ -1,7 +1,12 @@
 import styles from './UserProfile.module.css'
 import Image from "next/image";
-import PostFeed from "@/app/components/PostFeed";
 import { db } from "@/app/lib/firebase/firebase-server";
+import PostFeed from "@/app/components/PostFeed";
+import { Movie } from "@/app/lib/interfaces/movie";
+import { getMovieById } from "@/app/lib/tmdb/tmdb";
+import Row from "@/app/components/UI/Row";
+import MoviePoster from "@/app/components/MoviePoster";
+import SmallPostItem from "@/app/components/SmallPostItem";
 
 interface UserData {
     photoURL: string,
@@ -9,11 +14,10 @@ interface UserData {
     userId: string
 }
 
-const UserProfilePage = async ({ params }: any) => {
+const UserProfilePage = async ({params}: any) => {
 
     const usersRef = db.collection('users');
     const query = usersRef.where('userId', '==', params.userId)
-
     const userDoc = (await query.get()).docs[0];
 
     if (!userDoc) {
@@ -21,7 +25,6 @@ const UserProfilePage = async ({ params }: any) => {
             <h1>User not found 404</h1>
         )
     }
-
 
     const data = userDoc.data();
 
@@ -31,25 +34,58 @@ const UserProfilePage = async ({ params }: any) => {
         userId: data.userId,
     }
 
-    console.log(user)
+    const postsQuery = usersRef.doc(user.userId).collection('posts').orderBy('createdAt', 'desc');
+    const posts: Post[] = (await postsQuery.get()).docs.map((doc) => {
+        const data = doc.data()
+        return {
+            ...data as Post,
+            createdAt: data.createdAt.toMillis(),
+            updatedAt: data.updatedAt.toMillis(),
+        }
+    });
+
+
+
+    const favoriteMovies = ['181812', '181808', '1893', '550']
+
+
+    const movies: Movie[] = await Promise.all(favoriteMovies.map(async (id) => {
+        return await getMovieById(id)
+    }));
+
+    console.log(movies)
 
 
     return (
         <div className={styles.container}>
-            <div className={styles.profile}>
-                <div className={styles.user}>
-                    <Image className={styles['profile-image']} src={user.photoURL} alt={"profile-pic"} width={40} height={40}></Image>
-                    <h1>Firstname Lastname</h1>
-                    <div className={styles['user-data']}>
-                        <span>Posts: 2</span>
-                        <span>Hearts: 4</span>
+            <div className={styles.info}>
+                <Image className={styles.image} src={user.photoURL} width={300} height={300} alt={'profile image'}/>
+                <div className={styles['user-data']}>
+                    <h1 className={styles.name}>{user.displayName}</h1>
+                    <div className={styles['user-data-items']}>
+                        <span>Posts 3</span>
+                        <span>Hearts 4</span>
                     </div>
                 </div>
-                <div className={styles.favorites}>
-                    <h3>User has no favorites</h3>
-                </div>
             </div>
-            <PostFeed />
+            <div className={styles.posts}>
+                <h2>Posts</h2>
+                <ul className={styles.feed}>
+                    {posts.map((post: Post) => (
+                        <SmallPostItem post={post} key={post.slug} showIcon={false}/>
+                    ))}
+                </ul>
+
+            </div>
+            <div className={styles.favorites}>
+                <h2>Favorites</h2>
+                <Row>
+                    {movies.map((movie: Movie) => (
+                        <MoviePoster movie={movie} key={movie.id}/>
+                    ))}
+                </Row>
+            </div>
+
         </div>
     );
 };

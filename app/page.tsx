@@ -1,12 +1,9 @@
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
-import { db } from "@/app/lib/firebase/firebase-server";
-import Link from "next/link";
 import MoviePoster from "@/app/components/MoviePoster";
 
 const inter = Inter({subsets: ['latin']})
 import {
-    getMovieById,
     getPopularMovies,
     getTopRatedMovies,
     getTrendingMovies,

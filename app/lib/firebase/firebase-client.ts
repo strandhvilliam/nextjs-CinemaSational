@@ -2,7 +2,6 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 
-console.log("process.env.FIREBASE_API_KEY", process.env.FIREBASE_API_KEY)
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEL8yr8q6gfANO8LylMhfI98T4I2d1sPg",

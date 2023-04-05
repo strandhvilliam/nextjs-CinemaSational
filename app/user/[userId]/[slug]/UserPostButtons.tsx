@@ -32,8 +32,6 @@ const UserPostButtons = ( { post }: { post: Post}) => {
             authorId: post.authorId,
         }
 
-
-
         const res: Response = await fetch(`/api/heart`, {
             method: 'POST',
             headers: {

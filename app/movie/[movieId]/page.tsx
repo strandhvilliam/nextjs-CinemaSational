@@ -11,7 +11,7 @@ import MovieCast from "@/app/movie/[movieId]/MovieCast";
 import ViewPost from "@/app/movie/[movieId]/ViewPost";
 import MoviePoster from "@/app/components/MoviePoster";
 import Link from "next/link";
-import { db, getPostsByMovieId } from "@/app/lib/firebase/firebase-server";
+import { getPostsByMovieId } from "@/app/lib/firebase/firebase-server";
 
 const IMG_URL: string = "https://image.tmdb.org/t/p/original";
 
@@ -31,7 +31,6 @@ const MoviePage = async ({params}: any) => {
 
     const posts: Post[] = await getPostsByMovieId(params.movieId);
 
-    console.log(posts)
 
     return (
         <>
@@ -92,7 +91,7 @@ const MovieView = ({movie, videoURLs, cast}: ViewProps) => {
                     </div>
                     <h3 className={styles['overview-title']}>Overview</h3>
                     <p className={styles.overview}>{movie.overview}</p>
-                    <MovieButtons/>
+                    <MovieButtons movieId={movie.id} />
                 </div>
                 <VideoScroller videosURL={videoURLs}/>
             </div>

@@ -75,7 +75,5 @@ L
 components/VideoScroller.tsx,8/4/84a907dde39ff5f46d3bcde6e5c051788a260b5c
 S
 #components/VideoScroller.module.css,f/3/f3a0ec57b0cb4c35f530453c852e0c096c332324
-?
-app/globals.css,4/d/4dfa49b1332116153eb16507891285845e9ab86e
 G
 lib/serviceAccount.json,2/d/2dca812c08b5ce91bae5203fff0077b60ba5a8bd
